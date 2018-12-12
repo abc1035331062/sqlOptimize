@@ -1,0 +1,8 @@
+1、索引覆盖：
+  select *  FROM  tb_order where uid = 123456 and order_status = 0 ORDER BY add_time DESC limit 1 ;
+  数据库已存在索引 
+     idx_add_time : add_time;
+     idx_statu_time : order_status,add_time;
+  mysql 会认为 idx_statu_time 索引更加优，从而走了索引它，因为  order_status 数据分散小，
+  解决办法： 使用 主键排序 ，或者 ORDER BY order_status,add_time
+  
