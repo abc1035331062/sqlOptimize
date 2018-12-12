@@ -6,4 +6,4 @@
   mysql 会认为 idx_statu_time 索引更加优，从而走了索引它，因为  order_status 数据分散小，然后排序没有order_status字段 
   从而导致 必须扫描 order_status = 0 后排序
   解决办法： 使用 主键排序 ，或者 ORDER BY order_status,add_time
-  注意：不能使用 ： IGNORE INDEX  因为ORDER BY  不支持这玩意
+  注意：不能使用 ： IGNORE INDEX  此时不支持
