@@ -7,3 +7,6 @@
   从而导致 必须扫描 order_status = 0 后排序
   解决办法： 使用 主键排序 ，或者 ORDER BY order_status,add_time
   注意：不能使用 ： IGNORE INDEX  此时不支持
+
+2 STRAIGHT_JOIN  
+  STRAIGHT_JOIN只适用于inner join，并不使用与left join，right join。（因为left join，right join已经代表指定了表的执行顺序）
